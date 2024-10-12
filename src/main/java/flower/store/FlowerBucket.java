@@ -1,20 +1,22 @@
 package flower.store;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import lombok.Getter;
 
 public class FlowerBucket {
-    private final List<FlowerPack> flowers = new ArrayList<>();
 
+    @Getter
+    private final ArrayList<FlowerPack> allFlowerPacks = new ArrayList<>();
 
-    public void add(FlowerPack fp) {
-        flowers.add(fp);
+    public void add(FlowerPack pack) {
+        allFlowerPacks.add(pack);
     }
 
     public double getPrice() {
         double res = 0;
-        for (FlowerPack i: flowers) {
-            res += i.getPrice();
+        for (FlowerPack pack : allFlowerPacks) {
+            res += pack.getPrice();
         }
         return res;
     }

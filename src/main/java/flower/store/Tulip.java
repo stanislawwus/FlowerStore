@@ -1,24 +1,23 @@
 package flower.store;
 
 import lombok.Getter;
-import lombok.Setter;
 
-@Setter
+@Getter
 public class Tulip extends Flower {
-    @Getter
-    private double sepalLength;
-    private FlowerColor color;
-    @Getter
-    private double price;
-    @Getter
-    private FlowerType flowerType;
+    private final int basePrice = 55;
+    private final int baseSepalLength = 3;
 
-    @Override
-    public String toString() {
-        return "Tulip{"
-                + "sepalLength=" + sepalLength
-                + ", color=" + color
-                + ", price=" + price
-                + '}';
+    public Tulip() {
+        this.setFlowerType(FlowerType.TULIP);
+        this.setSepalLength(baseSepalLength);
+        this.setColor(FlowerColor.BLUE);
+        this.setPrice(basePrice);
+    }
+
+    public Tulip(double price) {
+        this.setFlowerType(FlowerType.TULIP);
+        this.setSepalLength(baseSepalLength);
+        this.setColor(FlowerColor.BLUE);
+        this.setPrice(price);
     }
 }
