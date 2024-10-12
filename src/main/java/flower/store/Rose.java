@@ -1,24 +1,25 @@
 package flower.store;
 
+
 import lombok.Getter;
-import lombok.Setter;
 
-@Setter
+@Getter
 public class Rose extends Flower {
-    @Getter
-    private double sepalLength;
-    private FlowerColor color;
-    @Getter
-    private double price;
-    @Getter
-    private FlowerType flowerType;
 
-    @Override
-    public String toString() {
-        return "Rose{"
-                + "sepalLength=" + sepalLength
-                + ", color=" + color
-                + ", price=" + price
-                + '}';
+    private final int basePrice = 99;
+    private final int baseSepalLength = 4;
+
+    public Rose() {
+        this.setFlowerType(FlowerType.ROSE);
+        this.setSepalLength(baseSepalLength);
+        this.setPrice(basePrice);
+        this.setColor(FlowerColor.RED);
+    }
+
+    public Rose(double price) {
+        this.setFlowerType(FlowerType.ROSE);
+        this.setSepalLength(baseSepalLength);
+        this.setPrice(price);
+        this.setColor(FlowerColor.RED);
     }
 }
