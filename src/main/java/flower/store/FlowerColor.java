@@ -18,11 +18,15 @@ public enum FlowerColor {
         if (n < 0 || n >= NUMBER_COLORS) {
             throw new IllegalArgumentException("Invalid color number");
         }
-        return switch (n % NUMBER_COLORS) {
-            case 0 -> RED;
-            case 1 -> BLUE;
-            default -> VIOLET;
-        };
+        else if (n % NUMBER_COLORS == 0) {
+            return RED;
+        }
+        else if (n % NUMBER_COLORS == 1) {
+            return BLUE;
+        }
+        else {
+            return VIOLET;
+        }
     }
 
     @Override
